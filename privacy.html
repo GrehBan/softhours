@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Purr Privacy Policy | Soft Hours</title>
+<meta name="description" content="Purr does not collect, send or share any personal data. Everything the game remembers stays on your phone.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://softhours.cloud/en/privacy/">
+<link rel="alternate" hreflang="en" href="https://softhours.cloud/en/privacy/">
+<link rel="alternate" hreflang="ru" href="https://softhours.cloud/ru/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://softhours.cloud/en/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Soft Hours">
+<meta property="og:title" content="Purr Privacy Policy | Soft Hours">
+<meta property="og:description" content="Purr does not collect, send or share any personal data. Everything the game remembers stays on your phone.">
+<meta property="og:url" content="https://softhours.cloud/en/privacy/">
+<meta property="og:image" content="https://softhours.cloud/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Soft Hours: calm little games for quiet hours">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#efe7d9">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" sizes="192x192" href="img/soft-hours-192.png">
+<link rel="apple-touch-icon" href="img/soft-hours-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<script>if (!("onpageswap" in window)) document.documentElement.classList.add("page-fade");</script>
+</head>
+<body>
+<main class="chooser">
+  <div class="chooser-box">
+    <span class="mark-dot big" aria-hidden="true"></span>
+    <h1>Soft <span class="soft">Hours</span></h1>
+    <p class="lede">Calm Indie Games<br><span lang="ru">Спокойные инди-игры</span></p>
+    <div class="btn-row center">
+      <a class="pillow" href="en/privacy/" hreflang="en" data-lang="en">English</a>
+      <a class="pillow" href="ru/privacy/" hreflang="ru" lang="ru" data-lang="ru">Русский</a>
+    </div>
+  </div>
+</main>
+<script>
+(function () {
+  var links = { en: "en/privacy/", ru: "ru/privacy/" };
+  document.querySelectorAll("[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      try { localStorage.setItem("softhours-lang", a.dataset.lang); } catch (e) {}
+    });
+  });
+  var lang = null;
+  try { lang = localStorage.getItem("softhours-lang"); } catch (e) {}
+  if (lang !== "en" && lang !== "ru") {
+    var prefs = navigator.languages || [navigator.language || "en"];
+    lang = "en";
+    for (var i = 0; i < prefs.length; i++) {
+      var l = String(prefs[i]).toLowerCase();
+      if (/^(ru|be|uk|kk)/.test(l)) { lang = "ru"; break; }
+      if (/^en/.test(l)) break;
+    }
+  }
+  location.replace(links[lang]);
+})();
+</script>
+</body>
+</html>

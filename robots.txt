@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://softhours.cloud/sitemap.xml
